@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+    int data[100],i,n,step,temp,test,k,count;
+    scanf("%d",&test);
+    for(k=1;k<=test;k++){
+    scanf("%d",&n);
+    for(i=0;i<n;++i)
+    {
+        scanf("%d",&data[i]);
+    }
+    count=0;
+    for(step=0;step<n-1;++step)
+    for(i=0;i<n-step-1;++i)
+    {
+        if(data[i]>data[i+1])   /* To sort in descending order, change > to < in this line. */
+        {
+            temp=data[i];
+            data[i]=data[i+1];
+            data[i+1]=temp;
+            count++;
+        }
+    }
+    printf("Optimal train swapping takes %d swaps.\n",count);
+    }
+    return 0;
+}
+
